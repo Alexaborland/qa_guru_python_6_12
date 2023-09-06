@@ -18,7 +18,6 @@ class User:
     city: str
 
 
-
 Alexandra = User(
     first_name='Alexandra',
     last_name='Borland',

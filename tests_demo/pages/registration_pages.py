@@ -17,8 +17,10 @@ class RegistrationPage:
         self.address = browser.element('#currentAddress')
         self.submit_button = browser.element('#submit')
 
-    def open(self):
-        browser.open('/automation-practice-form')
+    def browser_open(self):
+        browser.open('https://demoqa.com/automation-practice-form/')
+        browser.driver.execute_script("$('footer').remove()")
+        browser.driver.execute_script("$('#fixedban').remove()")
 
     def registration(self, user: User):
         self.first_name.type(user.first_name)

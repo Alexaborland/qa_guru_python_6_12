@@ -16,7 +16,7 @@ def test_with_high_level_registration_page():
     registration_page = RegistrationPage()
 
     with allure.step('Open the registration form'):
-        registration_page.open()
+        registration_page.browser_open()
 
     with allure.step('Fill registration form'):
         registration_page.registration(user)
