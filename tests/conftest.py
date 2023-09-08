@@ -1,14 +1,8 @@
 import os
-
-from selenium import webdriver
-from selenium.webdriver.chrome.options import Options
-import pytest
-import os
 import pytest
 from selenium.webdriver.chrome.options import Options
 from dotenv import load_dotenv
 from selene import browser
-import tests
 from selenium import webdriver
 from utils import attach
 
@@ -33,9 +27,10 @@ def load_env():
 
 
 @pytest.fixture(scope='function', autouse=True)
-def setup_browser(request):
+def browser_open(request):
     browser.config.window_width = 1920
     browser.config.window_height = 1080
+    browser.config.base_url = 'https://demoqa.com'
     browser.config.timeout = 10
 
     browser_version = request.config.getoption('--browser_version')
